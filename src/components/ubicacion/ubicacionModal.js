@@ -9,11 +9,12 @@ import Form from "react-bootstrap/Form";
 import { UbicacionContext } from "../../contexts/ubicacionContext";
 import { HomeContext } from "../../contexts/homeContext";
 
-import { save, get, edit } from "../../services/ubicacionApi";
+import { save, get as getUbicacion, edit } from "../../services/ubicacionApi";
+import { get as getFiscal} from "../../services/fiscaliaApi"
 
 const UbicacionModal = () => {
-  const { show, setShow, typeForm, form, search } = React.useContext(UbicacionContext);
-  const { setUbicacionList } = React.useContext(HomeContext);
+  const { show, setShow, typeForm, form } = React.useContext(UbicacionContext);
+  const { setUbicacionList, setFiscaliaList, searchUbicacion, searchFiscal } = React.useContext(HomeContext);
 
   const handleClose = () => setShow(false);
 
@@ -22,20 +23,23 @@ const UbicacionModal = () => {
   const onSubmit = async (data) => {
     const name = data.name;
 
-    if (name) { 
+    if (name) {
       if (typeForm === "Agregar") {
         await save(data);
       } else {
         const data = {
           id: form.id,
           name,
-        }
+        };
 
         await edit(data);
       }
       setShow(false);
-      const resData = await get(search);
+      let resData = await getUbicacion(searchUbicacion);
       setUbicacionList(resData.data);
+
+      resData = await getFiscal(searchFiscal)
+      setFiscaliaList(resData.data)
 
       NotificationManager.info(`${typeForm} la ubicacion con exito.`);
       reset({ name: "" });

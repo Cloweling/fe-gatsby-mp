@@ -10,8 +10,8 @@ import { HomeContext } from "../../contexts/homeContext";
 import { get, del } from "../../services/ubicacionApi";
 
 const UbicacionDeleteModal = () => {
-  const { showDelete, setShowDelete, search, form } = React.useContext(UbicacionContext);
-  const { setUbicacionList } = React.useContext(HomeContext);
+  const { showDelete, setShowDelete, form } = React.useContext(UbicacionContext);
+  const { setUbicacionList, searchUbicacion: search } = React.useContext(HomeContext);
 
   const handleClose = () => setShowDelete(false);
 

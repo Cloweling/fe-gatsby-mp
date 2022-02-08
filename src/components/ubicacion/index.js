@@ -18,13 +18,13 @@ const Ubicacion = () => {
     id: null,
     name: "",
   });
-  const [search, setSearch] = useState("");
+
   const [typeForm, setTypeForm] = useState("Guardar");
   const [showDelete, setShowDelete] = useState(false);
 
   return (
     <UbicacionContext.Provider
-      value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm, form, setForm, search, setSearch }}
+      value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm, form, setForm }}
     >
       <Container className="mt-4">
         <h1>Ubicacion</h1>

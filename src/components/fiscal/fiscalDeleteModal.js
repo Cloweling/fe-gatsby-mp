@@ -10,8 +10,8 @@ import { HomeContext } from "../../contexts/homeContext";
 import { get, del } from "../../services/fiscaliaApi";
 
 const FiscalDeleteModal = () => {
-  const { showDelete, setShowDelete, search, form } = React.useContext(FiscalContext);
-  const { setFiscaliaList } = React.useContext(HomeContext);
+  const { showDelete, setShowDelete, form } = React.useContext(FiscalContext);
+  const { setFiscaliaList, searchFiscal: search } = React.useContext(HomeContext);
 
   const handleClose = () => setShowDelete(false);
 

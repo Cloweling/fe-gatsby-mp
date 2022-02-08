@@ -39,7 +39,6 @@ const edit = async (data) => {
   return res;
 };
 
-
 const del = async (id) => {
   let url = `http://localhost:8080/api/v1/fiscalia/delete/${id}`;
 

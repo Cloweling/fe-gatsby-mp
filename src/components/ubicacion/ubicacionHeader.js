@@ -12,8 +12,8 @@ import { HomeContext } from "../../contexts/homeContext";
 import { get } from "../../services/ubicacionApi";
 
 const FiscalHeader = () => {
-  const { setShow, setSearch, setForm, setTypeForm } = React.useContext(UbicacionContext);
-  const { setUbicacionList } = React.useContext(HomeContext);
+  const { setShow, setForm, setTypeForm } = React.useContext(UbicacionContext);
+  const { setUbicacionList, setSearchUbicacion: setSearch } = React.useContext(HomeContext);
   const { watch, register } = useForm();
 
   const handleShow = () => {
