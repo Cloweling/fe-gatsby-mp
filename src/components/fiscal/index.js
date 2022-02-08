@@ -14,11 +14,21 @@ import "./style.css";
 
 const Fiscal = () => {
   const [show, setShow] = useState(false);
+  const [form, setForm] = useState({
+    id: null,
+    name: "",
+    ubicacion: {
+      id: "",
+    },
+  });
+  const [search, setSearch] = useState("");
   const [typeForm, setTypeForm] = useState("Guardar");
   const [showDelete, setShowDelete] = useState(false);
 
   return (
-    <FiscalContext.Provider value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm }}>
+    <FiscalContext.Provider
+      value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm, form, setForm, search, setSearch }}
+    >
       <Container className="mt-4">
         <h1>Fiscalia</h1>
         <Row>

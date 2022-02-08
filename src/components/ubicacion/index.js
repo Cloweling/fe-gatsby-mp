@@ -14,13 +14,20 @@ import "./style.css";
 
 const Ubicacion = () => {
   const [show, setShow] = useState(false);
+  const [form, setForm] = useState({
+    id: null,
+    name: "",
+  });
+  const [search, setSearch] = useState("");
   const [typeForm, setTypeForm] = useState("Guardar");
   const [showDelete, setShowDelete] = useState(false);
 
   return (
-    <UbicacionContext.Provider value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm }}>
+    <UbicacionContext.Provider
+      value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm, form, setForm, search, setSearch }}
+    >
       <Container className="mt-4">
-        <h1>Ubicacionia</h1>
+        <h1>Ubicacion</h1>
         <Row>
           <UbicacionHeader />
         </Row>
