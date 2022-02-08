@@ -21,14 +21,11 @@ const Fiscal = () => {
       id: "",
     },
   });
-  const [search, setSearch] = useState("");
   const [typeForm, setTypeForm] = useState("Guardar");
   const [showDelete, setShowDelete] = useState(false);
 
   return (
-    <FiscalContext.Provider
-      value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm, form, setForm, search, setSearch }}
-    >
+    <FiscalContext.Provider value={{ show, setShow, showDelete, setShowDelete, typeForm, setTypeForm, form, setForm }}>
       <Container className="mt-4">
         <h1>Fiscalia</h1>
         <Row>

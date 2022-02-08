@@ -12,8 +12,8 @@ import { HomeContext } from "../../contexts/homeContext";
 import { save, get, edit } from "../../services/fiscaliaApi";
 
 const FiscalModal = () => {
-  const { show, setShow, typeForm, form, search } = React.useContext(FiscalContext);
-  const { setFiscaliaList, ubicacionList } = React.useContext(HomeContext);
+  const { show, setShow, typeForm, form } = React.useContext(FiscalContext);
+  const { setFiscaliaList, ubicacionList, searchFiscal: search } = React.useContext(HomeContext);
 
   const handleClose = () => setShow(false);
 
@@ -38,7 +38,7 @@ const FiscalModal = () => {
         ubicacion: {
           id: parseInt(ubicacionId),
         },
-      };  
+      };
 
       if (typeForm === "Agregar") {
         await save(data);

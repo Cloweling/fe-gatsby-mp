@@ -13,6 +13,8 @@ import { get as getFiscalia } from "../services/fiscaliaApi";
 const Layout = () => {
   const [ubicacionList, setUbicacionList] = useState([]);
   const [fiscaliaList, setFiscaliaList] = useState([]);
+  const [searchUbicacion, setSearchUbicacion] = useState("");
+  const [searchFiscal, setSearchFiscal] = useState("");
 
   useEffect(() => {
     const getApi = async () => {
@@ -31,7 +33,18 @@ const Layout = () => {
   }, []);
 
   return (
-    <HomeContext.Provider value={{ ubicacionList, setUbicacionList, fiscaliaList, setFiscaliaList }}>
+    <HomeContext.Provider
+      value={{
+        ubicacionList,
+        setUbicacionList,
+        fiscaliaList,
+        setFiscaliaList,
+        searchFiscal,
+        setSearchFiscal,
+        searchUbicacion,
+        setSearchUbicacion,
+      }}
+    >
       <Container fluid>
         <Header />
         <Fiscal />

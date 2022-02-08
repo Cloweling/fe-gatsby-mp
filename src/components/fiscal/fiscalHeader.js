@@ -12,8 +12,8 @@ import { HomeContext } from "../../contexts/homeContext";
 import { get } from "../../services/fiscaliaApi";
 
 const FiscalHeader = () => {
-  const { setShow, setSearch, setForm, setTypeForm } = React.useContext(FiscalContext);
-  const { setFiscaliaList } = React.useContext(HomeContext);
+  const { setShow, setForm, setTypeForm } = React.useContext(FiscalContext);
+  const { setFiscaliaList, setSearchFiscal: setSearch } = React.useContext(HomeContext);
   const { watch, register } = useForm();
 
   const handleShow = () => {
