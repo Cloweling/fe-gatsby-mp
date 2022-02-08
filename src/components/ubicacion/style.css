@@ -1,0 +1,18 @@
+.button-modal-add {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-crud {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-crud i {
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-crud i svg {
+  height: 1rem;
+}
