@@ -84,7 +84,7 @@ const FiscalModal = () => {
           <Form.Group className="mb-3">
             <Form.Label>Ubicacion</Form.Label>
             <Form.Select {...register("ubicacion")}>
-              <option value="0">Seleleccione</option>
+              <option value="">Seleleccione</option>
               {ubicacionList.map((ubicacion) => {
                 return (
                   <option key={ubicacion.id} value={ubicacion.id}>
